@@ -12,4 +12,9 @@ function double(num) {
     return result;
 } 
 
-console.log(i);
+function multiply(a, b) {
+    return a * b;
+}
+
+
+console.log(multiply(double(i), multiply(i, i)));
