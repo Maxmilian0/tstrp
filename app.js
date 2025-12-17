@@ -1,20 +1,24 @@
 "use strict";
 
-console.log("Works");
+const body = document.body;
 
-let i = 67;
 
-function double(num) {
-    let result = 0;
-
-    result = num * 2;
-
-    return result;
-} 
-
-function multiply(a, b) {
-    return a * b;
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
 
+function generateRandomLinearGradient() {
+    let output = `linear-gradient(to right, `;
 
-console.log(multiply(double(i), multiply(i, i)));
+    for (let i = 0; i < 100000; i++) {
+        output += `rgb(${getRandomInt(255)}, 255, 255), `;
+    }
+
+    output = output.slice(0, -2) // remove last comma
+
+    output += ")";
+
+    return output;
+}
+
+body.style.background = generateRandomLinearGradient();
